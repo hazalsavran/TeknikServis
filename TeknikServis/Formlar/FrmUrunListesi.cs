@@ -19,10 +19,25 @@ namespace TeknikServis.Formlar
         }
 
         DbTeknikServisEntities db = new DbTeknikServisEntities();
+
+        void UrunListele()
+        {
+            var values = from u in db.TBLUrun
+                         select new
+                         {
+                             u.ID,
+                             u.AD,
+                             u.MARKA,
+                             u.ALISFIYAT,
+                             u.SATISFIYAT,
+                             u.STOK,
+                             KATEGORI = u.TBLKategori.AD
+                         };
+            gridControl1.DataSource = values.ToList();
+        }
         private void FrmUrunListesi_Load(object sender, EventArgs e)
         {
-            var values = db.TBLUrun.ToList();
-            gridControl1.DataSource = values;
+            UrunListele();
             txtKategori.Properties.DataSource = (from x in db.TBLKategori.ToList()
                                                  select new
                                                  {
@@ -52,9 +67,7 @@ namespace TeknikServis.Formlar
 
         private void btnListele_Click(object sender, EventArgs e)
         {
-            var values = db.TBLUrun.ToList();
-            gridControl1.DataSource = values;
-
+            UrunListele();
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
