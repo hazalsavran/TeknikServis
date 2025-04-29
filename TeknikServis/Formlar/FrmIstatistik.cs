@@ -16,5 +16,21 @@ namespace TeknikServis.Formlar
         {
             InitializeComponent();
         }
+        DbTeknikServisEntities db = new DbTeknikServisEntities();
+        private void FrmIstatistik_Load(object sender, EventArgs e)
+        {
+            labelControl2.Text = db.TBLUrun.Count().ToString();
+            labelControl3.Text = db.TBLKategori.Count().ToString();
+            labelControl9.Text = db.TBLUrun.Sum(x => x.STOK).ToString();
+            labelControl7.Text = db.TBLUrun.OrderByDescending(x => x.STOK).Select(x => x.AD).FirstOrDefault();
+            labelControl21.Text = db.TBLUrun
+                                               .OrderByDescending(x => x.STOK)
+                                               .Select(x => x.AD)
+                                               .ToList()
+                                               .LastOrDefault();
+            labelControl17.Text = db.TBLUrun.OrderByDescending(x => x.SATISFIYAT).Select(x => x.AD).ToList().LastOrDefault();
+            labelControl13.Text = db.TBLUrun.OrderByDescending(x => x.SATISFIYAT).Select(x => x.AD).FirstOrDefault();
+
+        }
     }
 }
