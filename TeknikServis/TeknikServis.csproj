@@ -108,6 +108,12 @@
     <Compile Include="Formlar\FrmKategori.Designer.cs">
       <DependentUpon>FrmKategori.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\FrmPersonel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\FrmPersonel.Designer.cs">
+      <DependentUpon>FrmPersonel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formlar\FrmUrunListesi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,12 @@
     </Compile>
     <Compile Include="Formlar\FrmYeniDepartman.Designer.cs">
       <DependentUpon>FrmYeniDepartman.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\FrmYeniPersonel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\FrmYeniPersonel.Designer.cs">
+      <DependentUpon>FrmYeniPersonel.cs</DependentUpon>
     </Compile>
     <Compile Include="Formlar\FrmYeniUrun.cs">
       <SubType>Form</SubType>
@@ -218,6 +230,9 @@
     <EmbeddedResource Include="Formlar\FrmKategori.resx">
       <DependentUpon>FrmKategori.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\FrmPersonel.resx">
+      <DependentUpon>FrmPersonel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formlar\FrmUrunListesi.resx">
       <DependentUpon>FrmUrunListesi.cs</DependentUpon>
     </EmbeddedResource>
@@ -229,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\FrmYeniKategori.resx">
       <DependentUpon>FrmYeniKategori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\FrmYeniPersonel.resx">
+      <DependentUpon>FrmYeniPersonel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\FrmYeniUrun.resx">
       <DependentUpon>FrmYeniUrun.cs</DependentUpon>

@@ -54,17 +54,17 @@
             this.barButtonItem20 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem21 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem22 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem23 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem24 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPersonelListesi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnYeniPersonel = new DevExpress.XtraBars.BarButtonItem();
             this.btnDepartmanListesi = new DevExpress.XtraBars.BarButtonItem();
             this.btnYeniDepartman = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem27 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem28 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem29 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem30 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem31 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem32 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem33 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHesapMakinesi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnYeniNot = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHaberler = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDöviz = new DevExpress.XtraBars.BarButtonItem();
+            this.btnWord = new DevExpress.XtraBars.BarButtonItem();
+            this.btnExcel = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDovizIslemleri = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem34 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem35 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem36 = new DevExpress.XtraBars.BarButtonItem();
@@ -127,17 +127,17 @@
             this.barButtonItem20,
             this.barButtonItem21,
             this.barButtonItem22,
-            this.barButtonItem23,
-            this.barButtonItem24,
+            this.btnPersonelListesi,
+            this.btnYeniPersonel,
             this.btnDepartmanListesi,
             this.btnYeniDepartman,
-            this.barButtonItem27,
-            this.barButtonItem28,
-            this.barButtonItem29,
-            this.barButtonItem30,
-            this.barButtonItem31,
-            this.barButtonItem32,
-            this.barButtonItem33,
+            this.btnHesapMakinesi,
+            this.btnYeniNot,
+            this.btnHaberler,
+            this.btnDöviz,
+            this.btnWord,
+            this.btnExcel,
+            this.btnDovizIslemleri,
             this.barButtonItem34,
             this.barButtonItem35,
             this.barButtonItem36,
@@ -348,28 +348,30 @@
             this.barButtonItem22.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem22.ImageOptions.LargeImage")));
             this.barButtonItem22.Name = "barButtonItem22";
             // 
-            // barButtonItem23
+            // btnPersonelListesi
             // 
-            this.barButtonItem23.Caption = "Personel Listesi";
-            this.barButtonItem23.Id = 24;
-            this.barButtonItem23.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem23.ImageOptions.Image")));
-            this.barButtonItem23.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem23.ImageOptions.LargeImage")));
-            this.barButtonItem23.Name = "barButtonItem23";
+            this.btnPersonelListesi.Caption = "Personel Listesi";
+            this.btnPersonelListesi.Id = 24;
+            this.btnPersonelListesi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPersonelListesi.ImageOptions.Image")));
+            this.btnPersonelListesi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPersonelListesi.ImageOptions.LargeImage")));
+            this.btnPersonelListesi.Name = "btnPersonelListesi";
+            this.btnPersonelListesi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPersonelListesi_ItemClick);
             // 
-            // barButtonItem24
+            // btnYeniPersonel
             // 
-            this.barButtonItem24.Caption = "Yeni Personel";
-            this.barButtonItem24.Id = 25;
-            this.barButtonItem24.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem24.ImageOptions.Image")));
-            this.barButtonItem24.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem24.ImageOptions.LargeImage")));
-            this.barButtonItem24.Name = "barButtonItem24";
+            this.btnYeniPersonel.Caption = "Yeni Personel";
+            this.btnYeniPersonel.Id = 25;
+            this.btnYeniPersonel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnYeniPersonel.ImageOptions.Image")));
+            this.btnYeniPersonel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnYeniPersonel.ImageOptions.LargeImage")));
+            this.btnYeniPersonel.Name = "btnYeniPersonel";
+            this.btnYeniPersonel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnYeniPersonel_ItemClick);
             // 
             // btnDepartmanListesi
             // 
             this.btnDepartmanListesi.Caption = "Departman Listesi";
             this.btnDepartmanListesi.Id = 26;
-            this.btnDepartmanListesi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem25.ImageOptions.Image")));
-            this.btnDepartmanListesi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem25.ImageOptions.LargeImage")));
+            this.btnDepartmanListesi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDepartmanListesi.ImageOptions.Image")));
+            this.btnDepartmanListesi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDepartmanListesi.ImageOptions.LargeImage")));
             this.btnDepartmanListesi.Name = "btnDepartmanListesi";
             this.btnDepartmanListesi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDepartmanListesi_ItemClick);
             // 
@@ -377,66 +379,70 @@
             // 
             this.btnYeniDepartman.Caption = "Yeni Departman";
             this.btnYeniDepartman.Id = 27;
-            this.btnYeniDepartman.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem26.ImageOptions.Image")));
-            this.btnYeniDepartman.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem26.ImageOptions.LargeImage")));
+            this.btnYeniDepartman.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnYeniDepartman.ImageOptions.Image")));
+            this.btnYeniDepartman.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnYeniDepartman.ImageOptions.LargeImage")));
             this.btnYeniDepartman.Name = "btnYeniDepartman";
             this.btnYeniDepartman.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnYeniDepartman_ItemClick);
             // 
-            // barButtonItem27
+            // btnHesapMakinesi
             // 
-            this.barButtonItem27.Caption = "Hesap Makinesi";
-            this.barButtonItem27.Id = 28;
-            this.barButtonItem27.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem27.ImageOptions.Image")));
-            this.barButtonItem27.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem27.ImageOptions.LargeImage")));
-            this.barButtonItem27.Name = "barButtonItem27";
+            this.btnHesapMakinesi.Caption = "Hesap Makinesi";
+            this.btnHesapMakinesi.Id = 28;
+            this.btnHesapMakinesi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem27.ImageOptions.Image")));
+            this.btnHesapMakinesi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem27.ImageOptions.LargeImage")));
+            this.btnHesapMakinesi.Name = "btnHesapMakinesi";
+            this.btnHesapMakinesi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHesapMakinesi_ItemClick);
             // 
-            // barButtonItem28
+            // btnYeniNot
             // 
-            this.barButtonItem28.Caption = "Yeni Not";
-            this.barButtonItem28.Id = 29;
-            this.barButtonItem28.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem28.ImageOptions.Image")));
-            this.barButtonItem28.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem28.ImageOptions.LargeImage")));
-            this.barButtonItem28.Name = "barButtonItem28";
+            this.btnYeniNot.Caption = "Yeni Not";
+            this.btnYeniNot.Id = 29;
+            this.btnYeniNot.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem28.ImageOptions.Image")));
+            this.btnYeniNot.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem28.ImageOptions.LargeImage")));
+            this.btnYeniNot.Name = "btnYeniNot";
+            this.btnYeniNot.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnYeniNot_ItemClick);
             // 
-            // barButtonItem29
+            // btnHaberler
             // 
-            this.barButtonItem29.Caption = "Haberler";
-            this.barButtonItem29.Id = 30;
-            this.barButtonItem29.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem29.ImageOptions.Image")));
-            this.barButtonItem29.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem29.ImageOptions.LargeImage")));
-            this.barButtonItem29.Name = "barButtonItem29";
+            this.btnHaberler.Caption = "Haberler";
+            this.btnHaberler.Id = 30;
+            this.btnHaberler.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem29.ImageOptions.Image")));
+            this.btnHaberler.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem29.ImageOptions.LargeImage")));
+            this.btnHaberler.Name = "btnHaberler";
             // 
-            // barButtonItem30
+            // btnDöviz
             // 
-            this.barButtonItem30.Caption = "Döviz Kurları";
-            this.barButtonItem30.Id = 31;
-            this.barButtonItem30.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem30.ImageOptions.Image")));
-            this.barButtonItem30.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem30.ImageOptions.LargeImage")));
-            this.barButtonItem30.Name = "barButtonItem30";
+            this.btnDöviz.Caption = "Döviz Kurları";
+            this.btnDöviz.Id = 31;
+            this.btnDöviz.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem30.ImageOptions.Image")));
+            this.btnDöviz.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem30.ImageOptions.LargeImage")));
+            this.btnDöviz.Name = "btnDöviz";
             // 
-            // barButtonItem31
+            // btnWord
             // 
-            this.barButtonItem31.Caption = "Word";
-            this.barButtonItem31.Id = 32;
-            this.barButtonItem31.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem31.ImageOptions.Image")));
-            this.barButtonItem31.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem31.ImageOptions.LargeImage")));
-            this.barButtonItem31.Name = "barButtonItem31";
+            this.btnWord.Caption = "Word";
+            this.btnWord.Id = 32;
+            this.btnWord.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem31.ImageOptions.Image")));
+            this.btnWord.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem31.ImageOptions.LargeImage")));
+            this.btnWord.Name = "btnWord";
+            this.btnWord.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnWord_ItemClick);
             // 
-            // barButtonItem32
+            // btnExcel
             // 
-            this.barButtonItem32.Caption = "Excel";
-            this.barButtonItem32.Id = 33;
-            this.barButtonItem32.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem32.ImageOptions.Image")));
-            this.barButtonItem32.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem32.ImageOptions.LargeImage")));
-            this.barButtonItem32.Name = "barButtonItem32";
+            this.btnExcel.Caption = "Excel";
+            this.btnExcel.Id = 33;
+            this.btnExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem32.ImageOptions.Image")));
+            this.btnExcel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem32.ImageOptions.LargeImage")));
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExcel_ItemClick);
             // 
-            // barButtonItem33
+            // btnDovizIslemleri
             // 
-            this.barButtonItem33.Caption = "Döviz İşlemleri";
-            this.barButtonItem33.Id = 34;
-            this.barButtonItem33.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem33.ImageOptions.Image")));
-            this.barButtonItem33.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem33.ImageOptions.LargeImage")));
-            this.barButtonItem33.Name = "barButtonItem33";
+            this.btnDovizIslemleri.Caption = "Döviz İşlemleri";
+            this.btnDovizIslemleri.Id = 34;
+            this.btnDovizIslemleri.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem33.ImageOptions.Image")));
+            this.btnDovizIslemleri.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem33.ImageOptions.LargeImage")));
+            this.btnDovizIslemleri.Name = "btnDovizIslemleri";
             // 
             // barButtonItem34
             // 
@@ -563,8 +569,8 @@
             // 
             // ribbonPageGroup4
             // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem23);
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem24);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnPersonelListesi);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnYeniPersonel);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "ribbonPageGroup4";
             // 
@@ -609,13 +615,13 @@
             // 
             // ribbonPageGroup8
             // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem27);
-            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem28);
-            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem29);
-            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem30);
-            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem33);
-            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem31);
-            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem32);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnHesapMakinesi);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnYeniNot);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnHaberler);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnDöviz);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnDovizIslemleri);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnWord);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnExcel);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             this.ribbonPageGroup8.Text = "ribbonPageGroup8";
             // 
@@ -729,18 +735,18 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
         private DevExpress.XtraBars.BarButtonItem barButtonItem21;
         private DevExpress.XtraBars.BarButtonItem barButtonItem22;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem23;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem24;
+        private DevExpress.XtraBars.BarButtonItem btnPersonelListesi;
+        private DevExpress.XtraBars.BarButtonItem btnYeniPersonel;
         private DevExpress.XtraBars.BarButtonItem btnDepartmanListesi;
         private DevExpress.XtraBars.BarButtonItem btnYeniDepartman;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup15;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem27;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem28;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem29;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem30;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem31;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem32;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem33;
+        private DevExpress.XtraBars.BarButtonItem btnHesapMakinesi;
+        private DevExpress.XtraBars.BarButtonItem btnYeniNot;
+        private DevExpress.XtraBars.BarButtonItem btnHaberler;
+        private DevExpress.XtraBars.BarButtonItem btnDöviz;
+        private DevExpress.XtraBars.BarButtonItem btnWord;
+        private DevExpress.XtraBars.BarButtonItem btnExcel;
+        private DevExpress.XtraBars.BarButtonItem btnDovizIslemleri;
         private DevExpress.XtraBars.BarButtonItem barButtonItem34;
         private DevExpress.XtraBars.BarButtonItem barButtonItem35;
         private DevExpress.XtraBars.BarButtonItem barButtonItem36;

@@ -87,5 +87,38 @@ namespace TeknikServis
             frm.Show();
         }
 
+        private void btnPersonelListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.FrmPersonel frm = new Formlar.FrmPersonel();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnYeniPersonel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.FrmYeniPersonel frm = new Formlar.FrmYeniPersonel();
+
+            frm.Show();
+        }
+
+        private void btnHesapMakinesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            System.Diagnostics.Process.Start("calc.exe");
+        }
+
+        private void btnYeniNot_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            System.Diagnostics.Process.Start("notepad.exe");
+        }
+
+        private void btnWord_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            System.Diagnostics.Process.Start("winword.exe");
+        }
+
+        private void btnExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            System.Diagnostics.Process.Start("excel.exe");
+        }
     }
 }
