@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DbTeknikServisModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DbTeknikServisModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -145,17 +145,18 @@
           <Property Name="TARIH" Type="smalldatetime" />
           <Property Name="ADET" Type="smallint" />
           <Property Name="FIYAT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="URUNSERINO" Type="char" MaxLength="5" />
         </EntityType>
         <EntityType Name="TBLUrunKabul">
           <Key>
             <PropertyRef Name="ISLEMID" />
           </Key>
           <Property Name="ISLEMID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="URUN" Type="int" />
           <Property Name="CARI" Type="int" />
           <Property Name="PERSONEL" Type="smallint" />
           <Property Name="GELISTARIHI" Type="smalldatetime" />
           <Property Name="CIKISTARIHI" Type="smalldatetime" />
+          <Property Name="URUNSERINO" Type="char" MaxLength="5" />
         </EntityType>
         <EntityType Name="TBLUrunTakip">
           <Key>
@@ -287,18 +288,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TBLUrunKabul_TBLUrun">
-          <End Role="TBLUrun" Type="Self.TBLUrun" Multiplicity="0..1" />
-          <End Role="TBLUrunKabul" Type="Self.TBLUrunKabul" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBLUrun">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="TBLUrunKabul">
-              <PropertyRef Name="URUN" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_TBLUrunTakip_TBLUrun">
           <End Role="TBLUrun" Type="Self.TBLUrun" Multiplicity="0..1" />
           <End Role="TBLUrunTakip" Type="Self.TBLUrunTakip" Multiplicity="*" />
@@ -367,17 +356,12 @@
             <End Role="TBLPersonel" EntitySet="TBLPersonel" />
             <End Role="TBLUrunKabul" EntitySet="TBLUrunKabul" />
           </AssociationSet>
-          <AssociationSet Name="FK_TBLUrunKabul_TBLUrun" Association="Self.FK_TBLUrunKabul_TBLUrun">
-            <End Role="TBLUrun" EntitySet="TBLUrun" />
-            <End Role="TBLUrunKabul" EntitySet="TBLUrunKabul" />
-          </AssociationSet>
           <AssociationSet Name="FK_TBLUrunTakip_TBLUrun" Association="Self.FK_TBLUrunTakip_TBLUrun">
             <End Role="TBLUrun" EntitySet="TBLUrun" />
             <End Role="TBLUrunTakip" EntitySet="TBLUrunTakip" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DbTeknikServisModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -524,7 +508,6 @@
           <Property Name="DURUM" Type="Boolean" />
           <NavigationProperty Name="TBLKategori" Relationship="Self.FK_TBLUrun_TBLKategori" FromRole="TBLUrun" ToRole="TBLKategori" />
           <NavigationProperty Name="TBLUrunHareket" Relationship="Self.FK_TBLUrunHareket_TBLUrun" FromRole="TBLUrun" ToRole="TBLUrunHareket" />
-          <NavigationProperty Name="TBLUrunKabul" Relationship="Self.FK_TBLUrunKabul_TBLUrun" FromRole="TBLUrun" ToRole="TBLUrunKabul" />
           <NavigationProperty Name="TBLUrunTakip" Relationship="Self.FK_TBLUrunTakip_TBLUrun" FromRole="TBLUrun" ToRole="TBLUrunTakip" />
         </EntityType>
         <EntityType Name="TBLUrunHareket">
@@ -541,20 +524,20 @@
           <NavigationProperty Name="TBLCari" Relationship="Self.FK_TBLUrunHareket_TBLCari" FromRole="TBLUrunHareket" ToRole="TBLCari" />
           <NavigationProperty Name="TBLPersonel" Relationship="Self.FK_TBLUrunHareket_TBLPersonel" FromRole="TBLUrunHareket" ToRole="TBLPersonel" />
           <NavigationProperty Name="TBLUrun" Relationship="Self.FK_TBLUrunHareket_TBLUrun" FromRole="TBLUrunHareket" ToRole="TBLUrun" />
+          <Property Name="URUNSERINO" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
         </EntityType>
         <EntityType Name="TBLUrunKabul">
           <Key>
             <PropertyRef Name="ISLEMID" />
           </Key>
           <Property Name="ISLEMID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="URUN" Type="Int32" />
           <Property Name="CARI" Type="Int32" />
           <Property Name="PERSONEL" Type="Int16" />
           <Property Name="GELISTARIHI" Type="DateTime" Precision="0" />
           <Property Name="CIKISTARIHI" Type="DateTime" Precision="0" />
           <NavigationProperty Name="TBLCari" Relationship="Self.FK_TBLUrunKabul_TBLCari" FromRole="TBLUrunKabul" ToRole="TBLCari" />
           <NavigationProperty Name="TBLPersonel" Relationship="Self.FK_TBLUrunKabul_TBLPersonel" FromRole="TBLUrunKabul" ToRole="TBLPersonel" />
-          <NavigationProperty Name="TBLUrun" Relationship="Self.FK_TBLUrunKabul_TBLUrun" FromRole="TBLUrunKabul" ToRole="TBLUrun" />
+          <Property Name="URUNSERINO" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
         </EntityType>
         <EntityType Name="TBLUrunTakip">
           <Key>
@@ -687,18 +670,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TBLUrunKabul_TBLUrun">
-          <End Role="TBLUrun" Type="Self.TBLUrun" Multiplicity="0..1" />
-          <End Role="TBLUrunKabul" Type="Self.TBLUrunKabul" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBLUrun">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="TBLUrunKabul">
-              <PropertyRef Name="URUN" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_TBLUrunTakip_TBLUrun">
           <End Role="TBLUrun" Type="Self.TBLUrun" Multiplicity="0..1" />
           <End Role="TBLUrunTakip" Type="Self.TBLUrunTakip" Multiplicity="*" />
@@ -766,10 +737,6 @@
           <AssociationSet Name="FK_TBLUrunHareket_TBLUrun" Association="Self.FK_TBLUrunHareket_TBLUrun">
             <End Role="TBLUrun" EntitySet="TBLUrun" />
             <End Role="TBLUrunHareket" EntitySet="TBLUrunHareket" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TBLUrunKabul_TBLUrun" Association="Self.FK_TBLUrunKabul_TBLUrun">
-            <End Role="TBLUrun" EntitySet="TBLUrun" />
-            <End Role="TBLUrunKabul" EntitySet="TBLUrunKabul" />
           </AssociationSet>
           <AssociationSet Name="FK_TBLUrunTakip_TBLUrun" Association="Self.FK_TBLUrunTakip_TBLUrun">
             <End Role="TBLUrun" EntitySet="TBLUrun" />
@@ -926,6 +893,7 @@
           <EntitySetMapping Name="TBLUrunHareket">
             <EntityTypeMapping TypeName="DbTeknikServisModel.TBLUrunHareket">
               <MappingFragment StoreEntitySet="TBLUrunHareket">
+                <ScalarProperty Name="URUNSERINO" ColumnName="URUNSERINO" />
                 <ScalarProperty Name="HAREKETID" ColumnName="HAREKETID" />
                 <ScalarProperty Name="URUN" ColumnName="URUN" />
                 <ScalarProperty Name="MUSTERI" ColumnName="MUSTERI" />
@@ -939,8 +907,8 @@
           <EntitySetMapping Name="TBLUrunKabul">
             <EntityTypeMapping TypeName="DbTeknikServisModel.TBLUrunKabul">
               <MappingFragment StoreEntitySet="TBLUrunKabul">
+                <ScalarProperty Name="URUNSERINO" ColumnName="URUNSERINO" />
                 <ScalarProperty Name="ISLEMID" ColumnName="ISLEMID" />
-                <ScalarProperty Name="URUN" ColumnName="URUN" />
                 <ScalarProperty Name="CARI" ColumnName="CARI" />
                 <ScalarProperty Name="PERSONEL" ColumnName="PERSONEL" />
                 <ScalarProperty Name="GELISTARIHI" ColumnName="GELISTARIHI" />

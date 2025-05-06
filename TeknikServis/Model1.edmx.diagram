@@ -30,7 +30,6 @@
         <AssociationConnector Association="DbTeknikServisModel.FK_TBLUrunHareket_TBLPersonel" ManuallyRouted="false" />
         <AssociationConnector Association="DbTeknikServisModel.FK_TBLUrunKabul_TBLPersonel" ManuallyRouted="false" />
         <AssociationConnector Association="DbTeknikServisModel.FK_TBLUrunHareket_TBLUrun" ManuallyRouted="false" />
-        <AssociationConnector Association="DbTeknikServisModel.FK_TBLUrunKabul_TBLUrun" ManuallyRouted="false" />
         <AssociationConnector Association="DbTeknikServisModel.FK_TBLUrunTakip_TBLUrun" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

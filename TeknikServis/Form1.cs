@@ -120,5 +120,26 @@ namespace TeknikServis
         {
             System.Diagnostics.Process.Start("excel.exe");
         }
+
+        private void btnDöviz_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.FrmKurlar frm = new Formlar.FrmKurlar();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnArizaliUrunListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.FrmArizaListesi frm = new Formlar.FrmArizaListesi();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnYeniUrunSatis_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.FrmUrunSatis frm = new Formlar.FrmUrunSatis();
+          
+            frm.Show();
+        }
     }
 }
