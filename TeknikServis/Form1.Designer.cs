@@ -507,6 +507,7 @@
             this.btnSatisListesi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSatisListesi.ImageOptions.Image")));
             this.btnSatisListesi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSatisListesi.ImageOptions.LargeImage")));
             this.btnSatisListesi.Name = "btnSatisListesi";
+            this.btnSatisListesi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSatisListesi_ItemClick);
             // 
             // ribbonPage1
             // 

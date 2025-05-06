@@ -141,5 +141,12 @@ namespace TeknikServis
           
             frm.Show();
         }
+
+        private void btnSatisListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.FrmSatislar frm = new Formlar.FrmSatislar();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
