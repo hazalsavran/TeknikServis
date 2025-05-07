@@ -18,7 +18,6 @@ namespace TeknikServis
         public TBLUrun()
         {
             this.TBLUrunHareket = new HashSet<TBLUrunHareket>();
-            this.TBLUrunTakip = new HashSet<TBLUrunTakip>();
         }
     
         public int ID { get; set; }
@@ -33,7 +32,5 @@ namespace TeknikServis
         public virtual TBLKategori TBLKategori { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TBLUrunHareket> TBLUrunHareket { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TBLUrunTakip> TBLUrunTakip { get; set; }
     }
 }

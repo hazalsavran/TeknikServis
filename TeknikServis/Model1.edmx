@@ -163,10 +163,9 @@
             <PropertyRef Name="TAKIPID" />
           </Key>
           <Property Name="TAKIPID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="URUN" Type="int" />
-          <Property Name="DURUM" Type="varchar" MaxLength="250" />
-          <Property Name="TARIH" Type="int" />
-          <Property Name="TAKIPKODU" Type="char" MaxLength="10" />
+          <Property Name="ACIKLAMA" Type="varchar" MaxLength="250" />
+          <Property Name="TARIH" Type="smalldatetime" />
+          <Property Name="URUNSERINO" Type="char" MaxLength="10" />
         </EntityType>
         <Association Name="FK_TBLFaturaBilgi_TBLCari">
           <End Role="TBLCari" Type="Self.TBLCari" Multiplicity="0..1" />
@@ -288,18 +287,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TBLUrunTakip_TBLUrun">
-          <End Role="TBLUrun" Type="Self.TBLUrun" Multiplicity="0..1" />
-          <End Role="TBLUrunTakip" Type="Self.TBLUrunTakip" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBLUrun">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="TBLUrunTakip">
-              <PropertyRef Name="URUN" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="DbTeknikServisModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLAdmin" EntityType="Self.TBLAdmin" Schema="dbo" store:Type="Tables" />
@@ -355,10 +342,6 @@
           <AssociationSet Name="FK_TBLUrunKabul_TBLPersonel" Association="Self.FK_TBLUrunKabul_TBLPersonel">
             <End Role="TBLPersonel" EntitySet="TBLPersonel" />
             <End Role="TBLUrunKabul" EntitySet="TBLUrunKabul" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TBLUrunTakip_TBLUrun" Association="Self.FK_TBLUrunTakip_TBLUrun">
-            <End Role="TBLUrun" EntitySet="TBLUrun" />
-            <End Role="TBLUrunTakip" EntitySet="TBLUrunTakip" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -508,7 +491,6 @@
           <Property Name="DURUM" Type="Boolean" />
           <NavigationProperty Name="TBLKategori" Relationship="Self.FK_TBLUrun_TBLKategori" FromRole="TBLUrun" ToRole="TBLKategori" />
           <NavigationProperty Name="TBLUrunHareket" Relationship="Self.FK_TBLUrunHareket_TBLUrun" FromRole="TBLUrun" ToRole="TBLUrunHareket" />
-          <NavigationProperty Name="TBLUrunTakip" Relationship="Self.FK_TBLUrunTakip_TBLUrun" FromRole="TBLUrun" ToRole="TBLUrunTakip" />
         </EntityType>
         <EntityType Name="TBLUrunHareket">
           <Key>
@@ -544,11 +526,9 @@
             <PropertyRef Name="TAKIPID" />
           </Key>
           <Property Name="TAKIPID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="URUN" Type="Int32" />
-          <Property Name="DURUM" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="TARIH" Type="Int32" />
-          <Property Name="TAKIPKODU" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="TBLUrun" Relationship="Self.FK_TBLUrunTakip_TBLUrun" FromRole="TBLUrunTakip" ToRole="TBLUrun" />
+          <Property Name="TARIH" Type="DateTime" Precision="0" />
+          <Property Name="ACIKLAMA" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="URUNSERINO" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
         </EntityType>
         <Association Name="FK_TBLFaturaBilgi_TBLCari">
           <End Role="TBLCari" Type="Self.TBLCari" Multiplicity="0..1" />
@@ -670,18 +650,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TBLUrunTakip_TBLUrun">
-          <End Role="TBLUrun" Type="Self.TBLUrun" Multiplicity="0..1" />
-          <End Role="TBLUrunTakip" Type="Self.TBLUrunTakip" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBLUrun">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="TBLUrunTakip">
-              <PropertyRef Name="URUN" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="DbTeknikServisEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="TBLAdmin" EntityType="Self.TBLAdmin" />
@@ -737,10 +705,6 @@
           <AssociationSet Name="FK_TBLUrunHareket_TBLUrun" Association="Self.FK_TBLUrunHareket_TBLUrun">
             <End Role="TBLUrun" EntitySet="TBLUrun" />
             <End Role="TBLUrunHareket" EntitySet="TBLUrunHareket" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TBLUrunTakip_TBLUrun" Association="Self.FK_TBLUrunTakip_TBLUrun">
-            <End Role="TBLUrun" EntitySet="TBLUrun" />
-            <End Role="TBLUrunTakip" EntitySet="TBLUrunTakip" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -919,11 +883,10 @@
           <EntitySetMapping Name="TBLUrunTakip">
             <EntityTypeMapping TypeName="DbTeknikServisModel.TBLUrunTakip">
               <MappingFragment StoreEntitySet="TBLUrunTakip">
+                <ScalarProperty Name="URUNSERINO" ColumnName="URUNSERINO" />
+                <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
                 <ScalarProperty Name="TAKIPID" ColumnName="TAKIPID" />
-                <ScalarProperty Name="URUN" ColumnName="URUN" />
-                <ScalarProperty Name="DURUM" ColumnName="DURUM" />
                 <ScalarProperty Name="TARIH" ColumnName="TARIH" />
-                <ScalarProperty Name="TAKIPKODU" ColumnName="TAKIPKODU" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

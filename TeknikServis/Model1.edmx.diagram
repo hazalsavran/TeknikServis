@@ -19,7 +19,6 @@
         <EntityTypeShape EntityType="DbTeknikServisModel.TBLUrun" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="DbTeknikServisModel.TBLUrunHareket" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DbTeknikServisModel.TBLUrunKabul" Width="1.5" PointX="8.25" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DbTeknikServisModel.TBLUrunTakip" Width="1.5" PointX="5.25" PointY="13.75" IsExpanded="true" />
         <AssociationConnector Association="DbTeknikServisModel.FK_TBLFaturaBilgi_TBLCari" ManuallyRouted="false" />
         <AssociationConnector Association="DbTeknikServisModel.FK_TBLUrunHareket_TBLCari" ManuallyRouted="false" />
         <AssociationConnector Association="DbTeknikServisModel.FK_TBLUrunKabul_TBLCari" ManuallyRouted="false" />
@@ -30,7 +29,6 @@
         <AssociationConnector Association="DbTeknikServisModel.FK_TBLUrunHareket_TBLPersonel" ManuallyRouted="false" />
         <AssociationConnector Association="DbTeknikServisModel.FK_TBLUrunKabul_TBLPersonel" ManuallyRouted="false" />
         <AssociationConnector Association="DbTeknikServisModel.FK_TBLUrunHareket_TBLUrun" ManuallyRouted="false" />
-        <AssociationConnector Association="DbTeknikServisModel.FK_TBLUrunTakip_TBLUrun" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

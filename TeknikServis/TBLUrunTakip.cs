@@ -15,11 +15,8 @@ namespace TeknikServis
     public partial class TBLUrunTakip
     {
         public int TAKIPID { get; set; }
-        public Nullable<int> URUN { get; set; }
-        public string DURUM { get; set; }
-        public Nullable<int> TARIH { get; set; }
-        public string TAKIPKODU { get; set; }
-    
-        public virtual TBLUrun TBLUrun { get; set; }
+        public Nullable<System.DateTime> TARIH { get; set; }
+        public string ACIKLAMA { get; set; }
+        public string URUNSERINO { get; set; }
     }
 }
