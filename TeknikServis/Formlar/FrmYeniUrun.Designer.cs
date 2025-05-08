@@ -268,7 +268,7 @@
             // 
             // btnKaydet
             // 
-            this.btnKaydet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnKaydet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKaydet.ImageOptions.Image")));
             this.btnKaydet.Location = new System.Drawing.Point(28, 599);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(123, 44);
@@ -278,7 +278,7 @@
             // 
             // btnVazgeç
             // 
-            this.btnVazgeç.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnVazgeç.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnVazgeç.ImageOptions.Image")));
             this.btnVazgeç.Location = new System.Drawing.Point(180, 599);
             this.btnVazgeç.Name = "btnVazgeç";
             this.btnVazgeç.Size = new System.Drawing.Size(123, 44);
