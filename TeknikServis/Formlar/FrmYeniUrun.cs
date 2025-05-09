@@ -31,10 +31,23 @@ namespace TeknikServis.Formlar
             tBLUrun.ALISFIYAT = decimal.Parse(txtAlisFiyat.Text);
             tBLUrun.SATISFIYAT = decimal.Parse(txtSatisFiyat.Text);
             tBLUrun.STOK = short.Parse(txtStok.Text);
-            tBLUrun.KATEGORI = byte.Parse(txtKategori.EditValue.ToString());
+            tBLUrun.KATEGORI = byte.Parse(lookUpEdit1.EditValue.ToString());
             db.TBLUrun.Add(tBLUrun);
             db.SaveChanges();
             MessageBox.Show("Ürün başarıyla kaydedildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void FrmYeniUrun_Load(object sender, EventArgs e)
+        {
+            DbTeknikServisEntities db = new DbTeknikServisEntities();
+            lookUpEdit1.Properties.DataSource = (from x in db.TBLKategori
+                                                 select new
+                                                 {
+                                                     x.ID,
+                                                     x.AD
+                                                 }).ToList();
+            lookUpEdit1.Properties.DisplayMember = "AD";
+            lookUpEdit1.Properties.ValueMember = "ID";
         }
     }
 }

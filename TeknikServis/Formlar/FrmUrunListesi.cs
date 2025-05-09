@@ -27,18 +27,19 @@ namespace TeknikServis.Formlar
                          {
                              u.ID,
                              u.AD,
+                             KATEGORI = u.TBLKategori.AD,
                              u.MARKA,
                              u.ALISFIYAT,
                              u.SATISFIYAT,
-                             u.STOK,
-                             KATEGORI = u.TBLKategori.AD
+                             u.STOK
+                             
                          };
             gridControl1.DataSource = values.ToList();
         }
         private void FrmUrunListesi_Load(object sender, EventArgs e)
         {
             UrunListele();
-            txtKategori.Properties.DataSource = (from x in db.TBLKategori.ToList()
+            txtKategori.Properties.DataSource = (from x in db.TBLKategori
                                                  select new
                                                  {
                                                      x.ID,

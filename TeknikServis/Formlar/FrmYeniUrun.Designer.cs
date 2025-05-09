@@ -38,7 +38,6 @@
             this.txtMarka = new DevExpress.XtraEditors.TextEdit();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtKategori = new DevExpress.XtraEditors.TextEdit();
             this.pictureEdit3 = new DevExpress.XtraEditors.PictureEdit();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtAlisFiyat = new DevExpress.XtraEditors.TextEdit();
@@ -53,12 +52,13 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtStok = new DevExpress.XtraEditors.TextEdit();
             this.pictureEdit7 = new DevExpress.XtraEditors.PictureEdit();
+            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUrunAd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMarka.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKategori.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAlisFiyat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).BeginInit();
@@ -68,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStok.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureEdit1
@@ -145,21 +146,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 3);
             this.panel3.TabIndex = 8;
-            // 
-            // txtKategori
-            // 
-            this.txtKategori.EditValue = "Kategori";
-            this.txtKategori.Location = new System.Drawing.Point(103, 300);
-            this.txtKategori.Name = "txtKategori";
-            this.txtKategori.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.txtKategori.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtKategori.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.txtKategori.Properties.Appearance.Options.UseBackColor = true;
-            this.txtKategori.Properties.Appearance.Options.UseFont = true;
-            this.txtKategori.Properties.Appearance.Options.UseForeColor = true;
-            this.txtKategori.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtKategori.Size = new System.Drawing.Size(100, 24);
-            this.txtKategori.TabIndex = 7;
             // 
             // pictureEdit3
             // 
@@ -320,12 +306,37 @@
             this.pictureEdit7.Size = new System.Drawing.Size(69, 70);
             this.pictureEdit7.TabIndex = 19;
             // 
+            // lookUpEdit1
+            // 
+            this.lookUpEdit1.Location = new System.Drawing.Point(180, 304);
+            this.lookUpEdit1.Name = "lookUpEdit1";
+            this.lookUpEdit1.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.lookUpEdit1.Properties.Appearance.Options.UseBackColor = true;
+            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit1.Size = new System.Drawing.Size(167, 20);
+            this.lookUpEdit1.TabIndex = 22;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseForeColor = true;
+            this.labelControl1.Location = new System.Drawing.Point(114, 302);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(58, 19);
+            this.labelControl1.TabIndex = 23;
+            this.labelControl1.Text = "Kategori";
+            // 
             // FrmYeniUrun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(429, 655);
+            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.lookUpEdit1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.txtStok);
             this.Controls.Add(this.pictureEdit7);
@@ -340,7 +351,6 @@
             this.Controls.Add(this.txtAlisFiyat);
             this.Controls.Add(this.pictureEdit4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.txtKategori);
             this.Controls.Add(this.pictureEdit3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txtMarka);
@@ -352,12 +362,12 @@
             this.Name = "FrmYeniUrun";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "YeniUrun";
+            this.Load += new System.EventHandler(this.FrmYeniUrun_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUrunAd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMarka.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKategori.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAlisFiyat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).EndInit();
@@ -367,7 +377,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStok.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -381,7 +393,6 @@
         private DevExpress.XtraEditors.TextEdit txtMarka;
         private DevExpress.XtraEditors.PictureEdit pictureEdit2;
         private System.Windows.Forms.Panel panel3;
-        private DevExpress.XtraEditors.TextEdit txtKategori;
         private DevExpress.XtraEditors.PictureEdit pictureEdit3;
         private System.Windows.Forms.Panel panel4;
         private DevExpress.XtraEditors.TextEdit txtAlisFiyat;
@@ -396,5 +407,7 @@
         private System.Windows.Forms.Panel panel6;
         private DevExpress.XtraEditors.TextEdit txtStok;
         private DevExpress.XtraEditors.PictureEdit pictureEdit7;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }
