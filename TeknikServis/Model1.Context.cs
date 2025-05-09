@@ -12,6 +12,8 @@ namespace TeknikServis
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class DbTeknikServisEntities : DbContext
     {
@@ -40,5 +42,10 @@ namespace TeknikServis
         public virtual DbSet<TBLUrunHareket> TBLUrunHareket { get; set; }
         public virtual DbSet<TBLUrunKabul> TBLUrunKabul { get; set; }
         public virtual DbSet<TBLUrunTakip> TBLUrunTakip { get; set; }
+    
+        public virtual ObjectResult<urunKategori_Result> urunKategori()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<urunKategori_Result>("urunKategori");
+        }
     }
 }

@@ -100,6 +100,12 @@
     <Compile Include="Formlar\FmFaturaKalem.Designer.cs">
       <DependentUpon>FmFaturaKalem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\FrmAnasayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\FrmAnasayfa.Designer.cs">
+      <DependentUpon>FrmAnasayfa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formlar\FrmArizaDetaylar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -306,11 +312,17 @@
     <Compile Include="TBLUrunTakip.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="urunKategori_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\FmFaturaKalem.resx">
       <DependentUpon>FmFaturaKalem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\FrmAnasayfa.resx">
+      <DependentUpon>FrmAnasayfa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\FrmArizaDetaylar.resx">
       <DependentUpon>FrmArizaDetaylar.cs</DependentUpon>

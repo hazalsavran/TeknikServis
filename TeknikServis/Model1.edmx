@@ -108,6 +108,7 @@
           <Property Name="BASLIK" Type="varchar" MaxLength="50" />
           <Property Name="ICERIK" Type="varchar" MaxLength="50" />
           <Property Name="DURUM" Type="bit" />
+          <Property Name="TARIH" Type="smalldatetime" />
         </EntityType>
         <EntityType Name="TBLPersonel">
           <Key>
@@ -287,6 +288,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="urunKategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="DbTeknikServisModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLAdmin" EntityType="Self.TBLAdmin" Schema="dbo" store:Type="Tables" />
@@ -460,6 +462,7 @@
           <Property Name="BASLIK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ICERIK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="DURUM" Type="Boolean" />
+          <Property Name="TARIH" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="TBLPersonel">
           <Key>
@@ -706,7 +709,12 @@
             <End Role="TBLUrun" EntitySet="TBLUrun" />
             <End Role="TBLUrunHareket" EntitySet="TBLUrunHareket" />
           </AssociationSet>
+          <FunctionImport Name="urunKategori" ReturnType="Collection(DbTeknikServisModel.urunKategori_Result)" />
         </EntityContainer>
+        <ComplexType Name="urunKategori_Result">
+          <Property Type="Int32" Name="Adet" Nullable="true" />
+          <Property Type="String" Name="AD" Nullable="true" MaxLength="50" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -820,6 +828,7 @@
           <EntitySetMapping Name="TBLNotlarim">
             <EntityTypeMapping TypeName="DbTeknikServisModel.TBLNotlarim">
               <MappingFragment StoreEntitySet="TBLNotlarim">
+                <ScalarProperty Name="TARIH" ColumnName="TARIH" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="BASLIK" ColumnName="BASLIK" />
                 <ScalarProperty Name="ICERIK" ColumnName="ICERIK" />
@@ -890,6 +899,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="urunKategori" FunctionName="DbTeknikServisModel.Store.urunKategori">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DbTeknikServisModel.urunKategori_Result">
+                <ScalarProperty Name="Adet" ColumnName="Adet" />
+                <ScalarProperty Name="AD" ColumnName="AD" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

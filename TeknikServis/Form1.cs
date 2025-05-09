@@ -198,5 +198,28 @@ namespace TeknikServis
             frm.MdiParent = this;
             frm.Show();
         }
+        Formlar.FrmAnasayfa frm;
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            if (frm ==null || frm.IsDisposed)
+            {
+                frm = new Formlar.FrmAnasayfa();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+           
+           
+        }
+
+        private void btnAnasayfa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+            if (frm == null || frm.IsDisposed)
+            {
+                frm = new Formlar.FrmAnasayfa();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
     }
 }
